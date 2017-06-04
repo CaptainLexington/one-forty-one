@@ -13,6 +13,6 @@
    (:game db)))
 
 (re-frame/reg-sub
- :selected-bed
+ :score
  (fn [db]
-   (:selected-bed db)))
+   (:score db)))
