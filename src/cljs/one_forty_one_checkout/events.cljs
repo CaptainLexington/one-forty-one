@@ -6,3 +6,10 @@
  :initialize-db
  (fn  [_ _]
    db/default-db))
+
+(re-frame/reg-event-db
+  :select-bed
+  (fn [db [_ bed-id]]
+  (assoc db
+         :selected-bed
+         bed-id)))

@@ -6,3 +6,13 @@
  :name
  (fn [db]
    (:name db)))
+
+(re-frame/reg-sub
+ :game
+ (fn [db]
+   (:game db)))
+
+(re-frame/reg-sub
+ :selected-bed
+ (fn [db]
+   (:selected-bed db)))
