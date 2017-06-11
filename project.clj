@@ -5,6 +5,7 @@
                  [re-frame "0.9.2"]
                  [re-frisk "0.3.2"]
                  [garden "1.3.2"]
+                 [cljsjs/hammer "2.0.4-5"]
                  [ns-tracker "0.3.0"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]

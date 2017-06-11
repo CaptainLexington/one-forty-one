@@ -3,7 +3,6 @@
             [clojure.reader :refer [read-string]]))
 
 (defn evaluate-bed [bed-id]
-  (print bed-id)
   (cond
     (= bed-id ::beds/BULL) 25
     (= bed-id ::beds/CORK) 50
@@ -34,8 +33,6 @@
 (defn score [score bed-id]
   (let [bed-value (evaluate-bed bed-id)
         new-value (- (:current-value score) bed-value)]
-    (print bed-id)
-    (print bed-value)
     (cond
       (and (= new-value 0) (isa? bed-id ::beds/double))
       (succeed-attempt score)
