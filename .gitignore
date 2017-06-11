@@ -3,4 +3,7 @@
 /*-init.clj
 /resources/public/js/compiled
 out
+cordova/node_modules
+cordova/package-lock.json
+cordova/www/js
 *.swp

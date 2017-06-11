@@ -46,9 +46,9 @@
      :figwheel     {:on-jsload "one-forty-one-checkout.core/mount-root"
                     :websocket-host :js-client-host }
      :compiler     {:main                 one-forty-one-checkout.core
-                    :output-to            "resources/public/js/compiled/app.js"
-                    :output-dir           "resources/public/js/compiled/out"
-                    :asset-path           "js/compiled/out"
+                    :output-to            "cordova/www/js/app.js"
+                    :output-dir           "cordova/www/js/out"
+                    :asset-path           "js/out"
                     :source-map-timestamp true
                     :preloads             [devtools.preload]
                     :external-config      {:devtools/config {:features-to-install :all}}
