@@ -2,7 +2,7 @@
 
 (def default-db
   {:name "One Forty One ??"
-   :game "Checkout Practice"
+   :game "Checkout Quiz"
    :score {:current-checkout 141
            :current-value 141
            :on-dart 1

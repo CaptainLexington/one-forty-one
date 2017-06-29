@@ -16,7 +16,8 @@
 
   :source-paths ["src/clj"]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"
+  :clean-targets ^{:protect false} ["cordova/www/js/compiled"
+                                    "target"
                                     "test/js"
                                     "resources/public/css"]
 

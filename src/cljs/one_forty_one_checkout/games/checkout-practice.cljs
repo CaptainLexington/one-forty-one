@@ -1,6 +1,15 @@
 (ns one-forty-one-checkout.games.checkout-practice
   (:require [one-forty-one-checkout.beds :as beds]
+            [clojure.set :as set]
             [clojure.reader :refer [read-string]]))
+
+
+(def checkout-values
+  (into [] 
+        (set/difference
+          (into #{} (range 2 170))
+          #{169 168 166 165 163 162 159})))
+
 
 (defn evaluate-bed [bed-id]
   (cond
@@ -13,22 +22,21 @@
               (isa? bed-id ::beds/treble) (* 3 numerical-value)
               :else 0))))
 
+(defn next-turn []
+  (let [new-checkout (rand-nth checkout-values)]
+    {:current-checkout new-checkout
+     :current-value  new-checkout
+     :on-dart 1}))
+
 (defn succeed-attempt [score]
-  {:current-checkout 141
-   :current-value 141
-   :on-dart 1
-   :successes (+ 1 (:successes score))
-   :total-attempts (+ 1 (:total-attempts score))
-   })
+  (merge (next-turn)
+         {:successes (+ 1 (:successes score))
+          :total-attempts (+ 1 (:total-attempts score)) }))
 
 (defn fail-attempt [score]
-  {:current-checkout 141
-   :current-value 141
-   :on-dart 1
-   :successes (:successes score)
-   :total-attempts (+ 1 (:total-attempts score))
-   })
-
+  (merge (next-turn)
+         {:successes (:successes score)
+          :total-attempts (+ 1 (:total-attempts score)) }))
 
 (defn score [score bed-id]
   (let [bed-value (evaluate-bed bed-id)
