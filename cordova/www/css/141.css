@@ -1,0 +1,8 @@
+.dartboard {
+  border: 1px solid red;
+}
+
+.scoreboard {
+  border: 1px solid blue;
+  background-color: Green;
+}
